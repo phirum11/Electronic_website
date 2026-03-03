@@ -883,7 +883,7 @@ const Navbar = ({ onCartOpen, onLoginOpen }) => {
                         {
                           icon: FiSettings,
                           label: 'Profile Settings',
-                          to: '/dashboard'
+                          to: '/'
                         }
                       ].map((item) => (
                         <Link
