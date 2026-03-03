@@ -85,7 +85,11 @@ const Home = () => {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-300">
               Free Block Tomorow 
             </span>  
-          </h1>   
+          </h1>
+          <p className="text-lg md:text-xl text-gray-200 mb-8 animate-fade-in-up stagger-2 max-w-2xl mx-auto">
+            If you wanna get free block . Shop now and enjoy
+            free shipping on orders over $100!
+          </p>   
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up stagger-3">
             <Link   
               to="/products"  
