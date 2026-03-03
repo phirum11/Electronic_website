@@ -86,7 +86,7 @@ const CartItem = ({
                 aria-label="Increase quantity"
               >
                 <FiPlus className="w-3.5 h-3.5" />
-              </button>
+              </button>   
             </div>
 
             {/* Subtotal */}

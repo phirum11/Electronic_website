@@ -27,7 +27,6 @@ const ProductCard = ({
           loading="lazy"
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
         />
-
         {/* Top badges */}
         <div className="absolute top-3 left-3 flex flex-col gap-2">
           {discount > 0 && (

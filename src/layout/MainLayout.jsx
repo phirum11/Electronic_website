@@ -1,14 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import {
-  FiMail,
-  FiPhone,
-  FiMapPin,
-  FiArrowRight,
-  FiFacebook,
-  FiInstagram,
-  FiTwitter
-} from 'react-icons/fi';
+import { FiMail, FiPhone, FiMapPin, FiArrowRight } from 'react-icons/fi';
+import { FaFacebookF, FaInstagram } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 import { useCart } from '../context/CartContext';
 import { useTheme } from '../context/ThemeContext';
 import useAuth from '../hooks/useAuth';
@@ -57,17 +51,37 @@ const MainLayout = ({ children }) => {
               {/* Social icons */}
               <div className="flex items-center gap-3 mt-4">
                 {[
-                  { icon: FiFacebook, label: 'Facebook' },
-                  { icon: FiInstagram, label: 'Instagram' },
-                  { icon: FiTwitter, label: 'Twitter' }
-                ].map(({ icon: Icon, label }) => (
-                  <button
+                  {
+                    icon: FaFacebookF,
+                    label: 'Facebook',
+                    href: 'https://facebook.com/phirum.pon.2025',
+                    color: 'hover:bg-[#1877F2] hover:text-white'
+                  },
+                  {
+                    icon: FaXTwitter,
+                    label: 'X / Twitter',
+                    href: 'https://x.com/PhirumPon',
+                    color:
+                      'hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black'
+                  },
+                  {
+                    icon: FaInstagram,
+                    label: 'Instagram',
+                    href: 'https://instagram.com/phon.phearum/',
+                    color:
+                      'hover:bg-gradient-to-tr hover:from-[#f9ce34] hover:via-[#ee2a7b] hover:to-[#6228d7] hover:text-white'
+                  }
+                ].map(({ icon: Icon, label, href, color }) => (
+                  <a
                     key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label={label}
-                    className="w-9 h-9 rounded-full bg-gray-100 dark:bg-gray-700/60 flex items-center justify-center text-gray-500 dark:text-gray-400 hover:bg-indigo-100 dark:hover:bg-indigo-900/40 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all cursor-pointer"
+                    className={`w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-700/60 flex items-center justify-center text-gray-500 dark:text-gray-400 transition-all duration-300 cursor-pointer shadow-sm hover:shadow-md hover:scale-110 ${color}`}
                   >
-                    <Icon size={16} />
-                  </button>
+                    <Icon className="w-[18px] h-[18px]" />
+                  </a>
                 ))}
               </div>
             </div>
@@ -85,7 +99,7 @@ const MainLayout = ({ children }) => {
                   { to: '/', label: 'Home' },
                   { to: '/products', label: 'Products' },
                   { to: '/cart', label: 'Cart' },
-                  { to: '/dashboard', label: 'Dashboard' }
+                  { to: '/', label: 'About Me' }
                 ].map((link) => (
                   <li key={link.to}>
                     <Link
@@ -121,8 +135,8 @@ const MainLayout = ({ children }) => {
               </ul>
             </div>
 
-            {/* Contact */}
-            <div className="col-span-2 md:col-span-1 mt-2 md:mt-0">
+            {/* Contact go center */}
+            <div className="col-span-2 md:col-span-1 mt-2 md:mt-0 ">
               <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-3 text-sm uppercase tracking-wider">
                 Contact Us
               </h4>
@@ -161,8 +175,8 @@ const MainLayout = ({ children }) => {
 
           {/* Bottom Bar */}
           <div className="border-t border-gray-200 dark:border-gray-700 mt-8 pt-6 text-center text-xs sm:text-sm text-gray-400 dark:text-gray-500">
-            &copy; {new Date().getFullYear()} AccountPro Electronic Store. All
-            rights reserved.
+            &copy; {new Date().getFullYear()} Electronic Store. All rights
+            reserved.
           </div>
         </div>
       </footer>
