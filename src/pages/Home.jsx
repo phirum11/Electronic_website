@@ -81,15 +81,11 @@ const Home = () => {
             <span>Top rated electronics store</span>
           </div> 
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 animate-fade-in-up stagger-1 leading-tight">
-            Shop Smarter,{' '} 
+            Shop Today,{' '} 
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-300">
-              Live Better
+              Free Block Tomorow 
             </span>  
           </h1>   
-          <p className="text-lg md:text-xl text-blue-100 mb-10 max-w-2xl mx-auto animate-fade-in-up stagger-2">
-            Discover premium products at unbeatable prices. Free shipping on
-            orders over $100.   
-          </p>   
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up stagger-3">
             <Link   
               to="/products"  
